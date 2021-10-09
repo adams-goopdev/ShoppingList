@@ -50,6 +50,7 @@ public class FileIO {
 
         try{
 
+            Log.d(TAG, "readFile: ");
             InputStream is = mainActivity.openFileInput(FILENAME);
             InputStreamReader reader = new InputStreamReader(is);
             BufferedReader bufferedReader = new BufferedReader(reader);
@@ -58,7 +59,7 @@ public class FileIO {
             while ((line = bufferedReader.readLine()) != null)
             {
                 items.add(line);
-
+                Log.d(TAG, "readFile: asdfasdf");
             }
             is.close();
 
@@ -72,6 +73,8 @@ public class FileIO {
         {
             Log.d(TAG, "readFile: " + e.getMessage());
         }
+        Log.d(TAG, "readFile: " + items.size());
         return items;
+
     }
 }
